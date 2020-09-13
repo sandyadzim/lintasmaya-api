@@ -13,6 +13,7 @@ router.get("/", async (req, res) => {
     const karyawans = await models.karyawan.findAll({
       limit: limit,
       offset: offset,
+      Order: ["id"],
     });
     if (karyawans.length > 0) {
       res.status(200).json({
