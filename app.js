@@ -33,7 +33,6 @@ app.use("/karyawan", Authenticated, KaryawanController);
 app.use("/", indexRouter);
 app.use("/users", usersRouter);
 
-client.connect();
 // catch 404 and forward to error handler
 app.use(function (req, res, next) {
   next(createError(404));
