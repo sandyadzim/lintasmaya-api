@@ -20,6 +20,8 @@ module.exports = {
         photo: faker.image.people(),
         jabatan: faker.name.jobTitle(),
         deskripsi: faker.name.jobDescriptor(),
+        createdAt: new Date(),
+        updatedAt: new Date(),
       });
     }
     return await queryInterface.bulkInsert("karyawans", karyawan);
