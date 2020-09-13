@@ -35,7 +35,9 @@ app.use("/users", usersRouter);
 
 const client = new Client({
   connectionString: process.env.DATABASE_URL,
-  ssl: true,
+  ssl: {
+    rejectUnauthorized: true,
+  },
 });
 
 client.connect();
