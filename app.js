@@ -10,6 +10,7 @@ var usersRouter = require("./routes/users");
 const LoginController = require("./routes/auth/loginController");
 const RegisterController = require("./routes/auth/registerController");
 const KaryawanController = require("./routes/karyawan/indexController");
+const AbsenController = require("./routes/absen/indexController");
 
 // Middleware
 const Authenticated = require("./middleware/middleware").authenticated;
@@ -31,6 +32,7 @@ app.use("/login", LoginController);
 app.use("/register", RegisterController);
 app.use("/karyawan", Authenticated, KaryawanController);
 app.use("/", indexRouter);
+app.use("/absen", Authenticated, AbsenController);
 app.use("/users", usersRouter);
 
 // catch 404 and forward to error handler
