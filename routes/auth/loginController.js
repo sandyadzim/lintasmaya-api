@@ -23,6 +23,7 @@ router.post("/", function (req, res) {
           success: "true",
           data: {
             token: token,
+            id: user.id,
             name: user.name,
             email: user.email,
           },
@@ -40,6 +41,15 @@ router.post("/", function (req, res) {
         message: "User tidak ditemukan!",
       });
     }
+  });
+});
+
+router.get("/", function (req, res) {
+  User.findAll().then((user) => {
+    res.status(200).json({
+      success: "true",
+      data: user,
+    });
   });
 });
 
