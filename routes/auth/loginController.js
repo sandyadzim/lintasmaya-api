@@ -11,6 +11,7 @@ var router = express.Router();
 router.post("/", function (req, res) {
   const email = req.body.email;
   const password = req.body.password;
+  console.log('adadadawd' + email)
 
   User.findOne({ where: { email } })
     .then(async (user) => {
